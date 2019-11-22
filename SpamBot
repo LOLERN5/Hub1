@@ -1,0 +1,12 @@
+local Message = "https://github.com/LOLERN5/Hub1"
+local TimeBetweenMessages = 1
+
+function SendMsg(m)
+game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(m,"All")
+end
+
+while wait(TimeBetweenMessages) do
+SendMessage(tostring(Message))
+end
+
+print("Started Spammer B)")
