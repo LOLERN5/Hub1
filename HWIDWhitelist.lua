@@ -2,6 +2,7 @@
 
 local HWID = game:GetService("RbxAnalyticsService"):GetClientId();
 local WhitelistedHWIDs = {"","",""}
+local qNVAKkuwxNpqruLjSRHg = false
 
 function CheckHWID(hwidval)
 for _,whitelisted in pairs(WhitelistedHWIDs) do
@@ -13,4 +14,8 @@ for _,whitelisted in pairs(WhitelistedHWIDs) do
     end
 end
 
-CheckHWID(HWID)
+qNVAKkuwxNpqruLjSRHg = CheckHWID(HWID)
+
+if qNVAKkuwxNpqruLjSRHg == true then
+ print("Yay!")
+end
