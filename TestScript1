@@ -1,0 +1,42 @@
+local Players = game.Workspace
+local RS = game.ReplicatedStorage
+local ServerScriptService = game.ServerScriptService
+local HttpService = game:GetService("HttpService");
+local WebhookURL = "WebhookURL" -- // The Webhook URL
+
+function SM(Webhook, Message, Botname) 
+    if not string.find(Webhook, "https://discordapp.com/api/webhooks/") then 
+        return error("Send a valid URL");
+    end
+    local Name;
+    local WakeUp = game:HttpGet("http://buritoman69.glitch.me");
+    local API = "http://buritoman69.glitch.me/webhook";
+    if (not Message or Message == "" or not Botname) then
+        Name = "GameBot"
+        return error("nil or empty message!")
+    else 
+        Name = Botname;
+    end
+    local Body = {
+        ['Key'] = tostring("applesaregood"),
+        ['Message'] = tostring(Message),
+        ['Name'] = Name,
+        ['Webhook'] = Webhook    
+    }
+    Body = HttpService:JSONEncode(Body);
+    local Data = game:HttpPost(API, Body, false, "application/json")
+    return Data or nil;
+end
+
+function Notify(title,msg,dur)
+wait()
+game.StarterGui:SetCore("SendNotification", {
+Title = title;
+Text = msg; 
+Duration = dur; 
+})
+end
+
+-- // Some Startup Code
+Notify("GitHub","Welcome "..Players.LocalPlayer.Name.."!")
+SM(WebhookURL,"**Loaded!**\n**Username : ""..Players.LocalPlayer.Name..**\n**PlaceID : ""..game.PlaceID**")
