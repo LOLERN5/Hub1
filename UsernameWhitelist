@@ -1,0 +1,24 @@
+local Players = game.Players
+local LocalPlayer = Players.LocalPlayer
+local Whitelisted = {"ROBLOX","Builderman","username"}
+-- Secret Whitelist Stuff
+local tFupCXWQXYribv0PS9Wy = {}
+tFupCXWQXYribv0PS9Wy.wtu34sA66Mek1WwdBtrh = {
+4yPngOBBv64LbGUqBmoL = false
+}
+
+function Check(name)
+for _,names in pairs(Whitelisted) do
+if name == names then
+return true
+end
+end
+end
+
+tFupCXWQXYribv0PS9Wy.wtu34sA66Mek1WwdBtrh.4yPngOBBv64LbGUqBmoL = Check(LocalPlayer.Name)
+wait(0.1)
+
+if tFupCXWQXYribv0PS9Wy.wtu34sA66Mek1WwdBtrh.4yPngOBBv64LbGUqBmoL == true then
+-- Whitelisted Stuff
+print("Yay!")
+end
