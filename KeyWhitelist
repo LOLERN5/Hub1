@@ -1,0 +1,25 @@
+_G.Key = "PlaceholderKey" -- // Paste Your Key Here!
+
+
+-- // Whitelist's Main Code
+local hnmXBTNrJdsD934sEVnD = {"key1","key2","key3"}
+local oHqkFBUiYMWoBRZ0r4Zl = false
+
+function CheckKey(allah)
+for _,keys in pairs(hnmXBTNrJdsD934sEVnD) do
+if allah == keys then
+return true
+    end
+  end
+end
+
+oHqkFBUiYMWoBRZ0r4Zl = CheckKey(_G.Key)
+wait(0.1)
+
+if oHqkFBUiYMWoBRZ0r4Zl == true then
+-- // Code Here For If Its A Whitelisted Key
+print("The Key ".._G.Key.." Was Valid. Welcome "..game.Players.LocalPlayer.Name.."!")
+elseif oHqkFBUiYMWoBRZ0r4Zl == false then
+-- // Invalid Key Code
+print("Uh Oh ".._G.Key.." Is Not A Valid Key.")
+end
